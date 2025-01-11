@@ -17,17 +17,15 @@ import utils
 import cv2
 from model import UNet
 
-from skimage import img_as_float32, img_as_ubyte
 from skimage.metrics import peak_signal_noise_ratio as psnr_loss
 from skimage.metrics import structural_similarity as ssim_loss
-from sklearn.metrics import mean_squared_error as mse_loss
 
 parser = argparse.ArgumentParser(description='RGB denoising evaluation on the validation set of SIDD')
-parser.add_argument('--input_dir', default='../ISTD_Dataset/test/',
+parser.add_argument('--input_dir', default='./ISTD_Dataset/test',
     type=str, help='Directory of validation images')
 parser.add_argument('--result_dir', default='./results/',
     type=str, help='Directory for results')
-parser.add_argument('--weights', default='./log/ShadowFormer_istd/models/model_best.pth',
+parser.add_argument('--weights', default='shadowformer-istd.pt',
     type=str, help='Path to weights')
 parser.add_argument('--gpus', default='0', type=str, help='CUDA_VISIBLE_DEVICES')
 parser.add_argument('--arch', default='ShadowFormer', type=str, help='arch')

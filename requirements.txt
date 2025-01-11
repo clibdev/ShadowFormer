@@ -1,8 +1,8 @@
-torch==1.7.1
-torchvision==0.8.2
+torch>=2.5.0
+torchvision>=0.20.0
 matplotlib
 scikit-image
-opencv-python
+opencv-python>=4.10.0
 yacs
 joblib 
 natsort 
@@ -13,3 +13,6 @@ linformer
 timm
 ptflops
 dataclasses
+
+### Optional - ONNX format
+# onnx>=1.17.0
